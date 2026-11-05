@@ -1,0 +1,1399 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talleres Flores Ballester · Taller mecánico en Almassora</title>
+<meta name="description" content="Talleres Flores Ballester S.L. — Taller mecánico multimarca en Almassora (Castellón). Mecánica general, diagnosis computarizada, pre-ITV, chapa y pintura, neumáticos, frenos, climatización y electricidad. Pide cita.">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:title" content="Talleres Flores Ballester · Almassora">
+<meta property="og:description" content="Ingeniería y precisión para tu vehículo en Almassora, Castellón.">
+<meta property="og:type" content="website">
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com/3.4.5"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          carbon: '#0a0a0b',
+          graphite: '#121316',
+          gunmetal: '#1a1c20',
+          titanium: '#8a8f98',
+          steel: '#c9ccd1',
+          race: '#ff2a2a',
+          amber: { neon: '#ffb020' }
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
+          body: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+        }
+      }
+    }
+  };
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Talleres Flores Ballester S.L.",
+  "description": "Taller mecánico multimarca en Almassora (Castellón).",
+  "telephone": "+34 000 000 000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Calle y número]",
+    "addressLocality": "Almassora",
+    "postalCode": "12550",
+    "addressRegion": "Castellón",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Almassora", "Castellón de la Plana", "Vila-real", "Borriol", "Benicàssim"]
+}
+</script>
+
+<style>
+  :root{
+    --carbon:#0a0a0b; --graphite:#121316; --gunmetal:#1a1c20;
+    --titanium:#8a8f98; --steel:#c9ccd1; --race:#ff2a2a; --amber:#ffb020;
+    --glass:rgba(22,23,27,.55); --line:rgba(255,255,255,.08);
+  }
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--carbon);color:var(--steel);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+  ::selection{background:var(--race);color:#fff}
+  section[id]{scroll-margin-top:96px}
+
+  /* Tabs */
+  .tabbar{scrollbar-width:none;-ms-overflow-style:none}
+  .tabbar::-webkit-scrollbar{display:none}
+  .tab-btn{position:relative;z-index:1;color:var(--titanium);transition:color .35s}
+  .tab-btn:hover{color:#fff}
+  .tab-btn[aria-selected="true"]{color:#fff}
+  #tabIndicator{width:0;transition:transform .55s cubic-bezier(.2,.8,.2,1), width .55s cubic-bezier(.2,.8,.2,1)}
+  .tab-panel[hidden]{display:none}
+  .tab-panel:focus{outline:none}
+  .nav-link.is-current{color:#fff}
+  .nav-link.is-current::after{transform:scaleX(1)}
+
+  /* WebGL canvas + fallbacks */
+  #webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+  .no-webgl #webgl{display:none}
+  .no-webgl body{background:
+      radial-gradient(60vw 60vw at 75% 25%, rgba(255,42,42,.14), transparent 60%),
+      radial-gradient(50vw 50vw at 20% 80%, rgba(58,123,255,.10), transparent 60%), var(--carbon)}
+  .grain{position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.06;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    animation:grain 1.2s steps(6) infinite}
+  @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+  /* Glass */
+  .glass{background:var(--glass);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid var(--line)}
+  .hairline{border-color:var(--line)}
+
+  /* Text helpers */
+  .text-metal{background:linear-gradient(180deg,#fff 0%,#d9dce1 45%,#7d828b 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text-race{background:linear-gradient(90deg,#ff2a2a,#ff6a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--titanium)}
+
+  /* Hero line masks */
+  .line{display:block;overflow:hidden;padding-bottom:.06em}
+  .line>span{display:inline-block;will-change:transform}
+  html.js .line>span{transform:translateY(110%)}
+  html.js [data-reveal]{opacity:0}
+  html.js .hero-fade{opacity:0}
+
+  /* Buttons */
+  .btn{position:relative;display:inline-flex;align-items:center;gap:.6rem;border-radius:999px;font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:.01em;transition:box-shadow .35s, background-color .35s, color .35s, border-color .35s;will-change:transform;isolation:isolate}
+  .btn-race{background:var(--race);color:#fff;box-shadow:0 0 0 0 rgba(255,42,42,0),0 10px 30px -10px rgba(255,42,42,.6)}
+  .btn-race:hover{box-shadow:0 0 0 6px rgba(255,42,42,.15),0 0 40px rgba(255,42,42,.55)}
+  .btn-race::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;
+    background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);background-size:250% 100%;background-position:150% 0;transition:background-position .8s}
+  .btn-race:hover::after{background-position:-50% 0}
+  .btn-ghost{border:1px solid rgba(255,255,255,.18);color:#fff;background:rgba(255,255,255,.03)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);box-shadow:0 0 24px rgba(255,176,32,.25), inset 0 0 18px rgba(255,176,32,.08)}
+  .btn .btn-inner{display:inline-flex;align-items:center;gap:.6rem;pointer-events:none}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+  /* Nav */
+  #nav{transition:background-color .4s, border-color .4s, transform .5s cubic-bezier(.2,.8,.2,1)}
+  #nav.scrolled{background:rgba(12,12,14,.72)}
+  .nav-link{position:relative;color:var(--titanium);transition:color .3s}
+  .nav-link::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--race);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+  .nav-link:hover{color:#fff}.nav-link:hover::after{transform:scaleX(1);transform-origin:left}
+  #mobileMenu{clip-path:circle(0% at calc(100% - 40px) 40px);transition:clip-path .7s cubic-bezier(.7,0,.2,1);pointer-events:none}
+  #mobileMenu.open{clip-path:circle(150% at calc(100% - 40px) 40px);pointer-events:auto}
+
+  /* Marquee */
+  .marquee{mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+  .marquee-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* Tilt cards */
+  .tilt{position:relative;border-radius:1.5rem;transform-style:preserve-3d;
+    transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
+    transition:transform .6s cubic-bezier(.2,.8,.2,1);will-change:transform}
+  .tilt.is-tilting{transition:transform .08s linear}
+  .tilt .tilt-bg{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(160deg,rgba(30,32,37,.75),rgba(14,15,18,.7));
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line)}
+  .tilt .tilt-glare{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;
+    background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),rgba(255,255,255,.03) 30%,transparent 55%);mix-blend-mode:screen}
+  .tilt .tilt-holo{position:absolute;inset:0;border-radius:inherit;pointer-events:none;padding:1px;opacity:.35;transition:opacity .4s;
+    background:conic-gradient(from var(--angle,0deg) at var(--mx,50%) var(--my,50%),rgba(255,42,42,.9),rgba(255,176,32,.8),rgba(120,200,255,.7),rgba(200,120,255,.6),rgba(255,42,42,.9));
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)}
+  .tilt:hover .tilt-glare{opacity:1}.tilt:hover .tilt-holo{opacity:1}
+  .tilt .tilt-content{position:relative;transform:translateZ(46px);transform-style:preserve-3d}
+  .tilt .tilt-float{transform:translateZ(30px)}
+  .tilt .tilt-num{font-family:"JetBrains Mono",monospace;color:rgba(255,255,255,.18)}
+  .tilt:hover .tilt-num{color:var(--amber)}
+  .icon-chip{display:grid;place-items:center;width:3rem;height:3rem;border-radius:.9rem;background:linear-gradient(145deg,rgba(255,42,42,.18),rgba(255,42,42,.04));border:1px solid rgba(255,42,42,.3);color:#ff5a4a;box-shadow:0 0 24px -6px rgba(255,42,42,.45)}
+  .chip{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.06em;padding:.3rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.1);color:var(--titanium);background:rgba(255,255,255,.02)}
+
+  /* Stats */
+  .stat-num{font-family:"Space Grotesk",sans-serif;font-variant-numeric:tabular-nums;color:var(--amber);text-shadow:0 0 30px rgba(255,176,32,.35)}
+  .scanline{position:absolute;left:0;right:0;height:40%;top:-40%;pointer-events:none;background:linear-gradient(180deg,transparent,rgba(255,176,32,.06),transparent);animation:scan 5s linear infinite}
+  @keyframes scan{to{top:100%}}
+
+  /* Timeline */
+  .tl-node{transition:background-color .5s, border-color .5s, box-shadow .5s, color .5s}
+  .tl-step.is-active .tl-node{background:var(--race);border-color:var(--race);color:#fff;box-shadow:0 0 0 6px rgba(255,42,42,.15),0 0 30px rgba(255,42,42,.6)}
+  .tl-step .tl-title{transition:color .5s}
+  .tl-step.is-active .tl-title{color:#fff}
+
+  /* Form */
+  .field{position:relative}
+  .field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:.9rem;padding:1.35rem 1rem .55rem;color:#fff;font-size:.95rem;transition:border-color .3s, box-shadow .3s, background-color .3s;appearance:none;-webkit-appearance:none}
+  .field select{padding-right:2.5rem;cursor:pointer}
+  .field select option{background:#16171b;color:#fff}
+  .field label{position:absolute;left:1rem;top:1rem;font-size:.95rem;color:var(--titanium);pointer-events:none;transition:all .25s cubic-bezier(.2,.8,.2,1)}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--amber);background:rgba(255,176,32,.04);box-shadow:0 0 0 4px rgba(255,176,32,.1)}
+  .field input:focus+label,.field input:not(:placeholder-shown)+label,.field select+label{top:.45rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-family:"JetBrains Mono",monospace;color:var(--amber)}
+  .field.invalid input,.field.invalid select{border-color:var(--race);box-shadow:0 0 0 4px rgba(255,42,42,.12)}
+  .field .err{display:none;font-size:.75rem;color:#ff6a5a;margin-top:.35rem;padding-left:.25rem}
+  .field.invalid .err{display:block}
+  .check-box{width:1.1rem;height:1.1rem;border-radius:.3rem;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;flex:none;transition:all .25s}
+  #privacy:checked+.check-box{background:var(--race);border-color:var(--race)}
+  #privacy:checked+.check-box svg{opacity:1}
+  #privacy:focus-visible+.check-box{outline:2px solid var(--amber);outline-offset:2px}
+
+  .map-frame{filter:grayscale(1) invert(.92) contrast(.9) brightness(.9);opacity:.85}
+
+  /* Loader */
+  #loader{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--carbon);transition:opacity .7s ease, visibility .7s}
+  #loader.done{opacity:0;visibility:hidden}
+  #loaderBar{transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.7,0,.2,1)}
+
+  .pulse-dot{box-shadow:0 0 0 0 rgba(255,42,42,.7);animation:pulse 1.8s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 10px rgba(255,42,42,0)}100%{box-shadow:0 0 0 0 rgba(255,42,42,0)}}
+
+  @media (max-width:767px){ body{padding-bottom:calc(76px + env(safe-area-inset-bottom))} }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .grain,.marquee-track,.scanline,.pulse-dot{animation:none}
+    html.js .line>span{transform:none} html.js [data-reveal],html.js .hero-fade{opacity:1}
+  }
+</style>
+</head>
+
+<body class="font-body antialiased">
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- LOADER -->
+  <div id="loader" aria-hidden="true">
+    <div class="text-center">
+      <div class="font-display text-2xl font-bold tracking-[.3em] text-white">F<span class="text-race">/</span>B</div>
+      <div class="mt-5 h-px w-40 bg-white/10 overflow-hidden"><div id="loaderBar" class="h-full w-full bg-race"></div></div>
+      <div class="eyebrow mt-4">Iniciando diagnosis</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+    <nav id="nav" class="glass mx-auto max-w-7xl rounded-2xl px-4 sm:px-6 h-16 flex items-center justify-between" aria-label="Principal">
+      <a href="#inicio" class="flex items-center gap-3 group" aria-label="Flores Ballester, inicio">
+        <span class="relative grid place-items-center w-9 h-9 rounded-xl bg-gradient-to-br from-gunmetal to-carbon border border-white/10 overflow-hidden">
+          <svg viewBox="0 0 24 24" class="w-5 h-5 text-race transition-transform duration-700 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>
+          </svg>
+        </span>
+        <span class="leading-none">
+          <span class="block whitespace-nowrap font-display font-bold text-white tracking-[.1em] sm:tracking-[.18em] text-[.8rem] sm:text-[.95rem]">FLORES BALLESTER</span>
+          <span class="block whitespace-nowrap font-mono text-[.55rem] sm:text-[.6rem] tracking-[.2em] sm:tracking-[.3em] text-titanium mt-1">TALLERES · ALMASSORA</span>
+        </span>
+      </a>
+
+      <ul class="hidden lg:flex items-center gap-8 text-sm">
+        <li><a class="nav-link" href="#servicios">Servicios</a></li>
+        <li><a class="nav-link" href="#por-que">Por qué nosotros</a></li>
+        <li><a class="nav-link" href="#proceso">Proceso</a></li>
+        <li><a class="nav-link" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="flex items-center gap-2">
+        <a data-cfg-tel href="tel:+34000000000" class="hidden md:inline-flex btn btn-ghost text-sm px-4 py-2.5 magnetic">
+          <span class="btn-inner"><span class="w-2 h-2 rounded-full bg-race pulse-dot"></span>Urgencias</span>
+        </a>
+        <a href="#contacto" class="btn btn-race text-sm px-4 sm:px-5 py-2.5 magnetic">
+          <span class="btn-inner"><i data-lucide="calendar-check" class="w-4 h-4"></i><span class="hidden sm:inline">Cita previa</span><span class="sm:hidden">Cita</span></span>
+        </a>
+        <button id="menuBtn" class="lg:hidden grid place-items-center w-10 h-10 rounded-xl border border-white/10 text-white" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu" class="fixed inset-0 z-[55] bg-carbon/95 backdrop-blur-xl lg:hidden" aria-hidden="true">
+    <button id="menuClose" class="absolute top-7 right-7 grid place-items-center w-10 h-10 rounded-xl border border-white/10 text-white" aria-label="Cerrar menú">
+      <i data-lucide="x" class="w-5 h-5"></i>
+    </button>
+    <nav class="h-full flex flex-col justify-center px-8 gap-2" aria-label="Móvil">
+      <span class="eyebrow mb-6">Menú</span>
+      <a class="mm-link font-display text-4xl font-semibold text-white py-2" href="#servicios">Servicios</a>
+      <a class="mm-link font-display text-4xl font-semibold text-white py-2" href="#por-que">Por qué nosotros</a>
+      <a class="mm-link font-display text-4xl font-semibold text-white py-2" href="#proceso">Proceso</a>
+      <a class="mm-link font-display text-4xl font-semibold text-white py-2" href="#contacto">Contacto</a>
+      <a data-cfg-tel href="tel:+34000000000" class="mm-link mt-8 btn btn-race justify-center py-4 text-lg"><span class="btn-inner"><i data-lucide="phone" class="w-5 h-5"></i>Llamar ahora</span></a>
+    </nav>
+  </div>
+
+  <main class="relative z-10">
+
+    <!-- HERO -->
+    <section id="inicio" class="relative min-h-[100svh] flex items-center overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none bg-gradient-to-r from-carbon via-carbon/70 to-transparent md:via-carbon/40"></div>
+      <div class="absolute inset-x-0 bottom-0 h-40 pointer-events-none bg-gradient-to-t from-carbon to-transparent"></div>
+
+      <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        <div class="max-w-3xl">
+          <div class="hero-fade inline-flex items-center gap-3 glass rounded-full pl-2 pr-4 py-1.5 mb-8">
+            <span class="grid place-items-center w-6 h-6 rounded-full bg-race/15 text-race"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i></span>
+            <span class="eyebrow !text-steel !tracking-[.16em]">Taller multimarca · Almassora, Castellón</span>
+          </div>
+
+          <h1 class="font-display font-bold text-white leading-[.95] tracking-tight text-[2.75rem] sm:text-6xl lg:text-[5.4rem]">
+            <span class="line"><span class="text-metal">Ingeniería y</span></span>
+            <span class="line"><span class="text-metal">Precisión para</span></span>
+            <span class="line"><span class="text-metal">tu Vehículo en</span></span>
+            <span class="line"><span class="text-race">Almassora.</span></span>
+          </h1>
+
+          <p class="hero-fade mt-8 max-w-xl text-base sm:text-lg text-titanium leading-relaxed">
+            En <strong class="text-steel font-semibold">Talleres Flores Ballester S.L.</strong> unimos el oficio de un taller de confianza de toda la vida con equipos de diagnosis de última generación. Tu coche, en manos de profesionales que dan la cara.
+          </p>
+
+          <div class="hero-fade mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a href="#contacto" class="btn btn-race justify-center px-7 py-4 text-base magnetic">
+              <span class="btn-inner">Solicitar presupuesto <i data-lucide="arrow-right" class="w-5 h-5"></i></span>
+            </a>
+            <a href="#servicios" class="btn btn-ghost justify-center px-7 py-4 text-base magnetic">
+              <span class="btn-inner">Ver servicios</span>
+            </a>
+          </div>
+
+          <ul class="hero-fade mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-titanium">
+            <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-amber-neon"></i>Garantía por escrito</li>
+            <li class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 text-amber-neon"></i>Presupuesto sin compromiso</li>
+            <li class="flex items-center gap-2"><i data-lucide="car" class="w-4 h-4 text-amber-neon"></i>Todas las marcas</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- HUD -->
+      <div class="hero-fade hidden md:flex absolute right-6 bottom-10 flex-col items-end gap-1 font-mono text-[.65rem] tracking-[.2em] text-titanium" aria-hidden="true">
+        <span>SYS.CORE <span class="text-amber-neon">// ONLINE</span></span>
+        <span>DIAG.OBD <span class="text-emerald-400">OK</span></span>
+        <span>SCROLL <span id="hudScroll" class="text-steel">000</span>%</span>
+      </div>
+      <a href="#servicios" class="hero-fade absolute left-1/2 -translate-x-1/2 bottom-8 flex flex-col items-center gap-2 text-titanium hover:text-white transition-colors" aria-label="Bajar a servicios">
+        <span class="eyebrow !text-[.6rem]">Scroll</span>
+        <span class="relative w-px h-10 bg-white/15 overflow-hidden"><span class="absolute inset-x-0 top-0 h-1/2 bg-race animate-[scrollcue_1.6s_ease-in-out_infinite]"></span></span>
+      </a>
+      <style>@keyframes scrollcue{0%{transform:translateY(-100%)}100%{transform:translateY(200%)}}</style>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="relative border-y hairline bg-carbon/60 backdrop-blur-sm py-5 marquee overflow-hidden" aria-hidden="true">
+      <div class="marquee-track gap-12 font-display text-xl sm:text-2xl font-semibold text-white/20 whitespace-nowrap">
+        <span class="flex items-center gap-12">MECÁNICA GENERAL <span class="text-race">✦</span> DIAGNOSIS OBD <span class="text-race">✦</span> PRE-ITV <span class="text-race">✦</span> CHAPA Y PINTURA <span class="text-race">✦</span> NEUMÁTICOS <span class="text-race">✦</span> FRENOS <span class="text-race">✦</span> AIRE ACONDICIONADO <span class="text-race">✦</span> ELECTRICIDAD <span class="text-race">✦</span></span>
+        <span class="flex items-center gap-12">MECÁNICA GENERAL <span class="text-race">✦</span> DIAGNOSIS OBD <span class="text-race">✦</span> PRE-ITV <span class="text-race">✦</span> CHAPA Y PINTURA <span class="text-race">✦</span> NEUMÁTICOS <span class="text-race">✦</span> FRENOS <span class="text-race">✦</span> AIRE ACONDICIONADO <span class="text-race">✦</span> ELECTRICIDAD <span class="text-race">✦</span></span>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div id="tabs" class="relative pt-10 sm:pt-14">
+      <div class="sticky top-[88px] z-40 px-4 sm:px-6 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex justify-center">
+          <div role="tablist" aria-label="Secciones de la página" class="tabbar pointer-events-auto glass relative flex gap-1 p-1.5 rounded-2xl overflow-x-auto max-w-full shadow-[0_20px_50px_-20px_rgba(0,0,0,.8)]">
+            <span id="tabIndicator" class="absolute top-1.5 bottom-1.5 left-0 rounded-xl bg-race shadow-[0_0_24px_rgba(255,42,42,.45)]" aria-hidden="true"></span>
+            <button type="button" role="tab" id="tab-servicios" aria-controls="servicios" aria-selected="true" class="tab-btn flex items-center gap-2 px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-display font-semibold whitespace-nowrap">
+              <i data-lucide="wrench" class="hidden sm:block w-4 h-4"></i>Servicios
+            </button>
+            <button type="button" role="tab" id="tab-por-que" aria-controls="por-que" aria-selected="false" tabindex="-1" class="tab-btn flex items-center gap-2 px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-display font-semibold whitespace-nowrap">
+              <i data-lucide="shield-check" class="hidden sm:block w-4 h-4"></i>Por qué<span class="hidden sm:inline">&nbsp;nosotros</span>
+            </button>
+            <button type="button" role="tab" id="tab-proceso" aria-controls="proceso" aria-selected="false" tabindex="-1" class="tab-btn flex items-center gap-2 px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-display font-semibold whitespace-nowrap">
+              <i data-lucide="timer" class="hidden sm:block w-4 h-4"></i>Proceso
+            </button>
+            <button type="button" role="tab" id="tab-contacto" aria-controls="contacto" aria-selected="false" tabindex="-1" class="tab-btn flex items-center gap-2 px-3.5 sm:px-5 py-2.5 rounded-xl text-sm font-display font-semibold whitespace-nowrap">
+              <i data-lucide="calendar-check" class="hidden sm:block w-4 h-4"></i>Cita<span class="hidden sm:inline">&nbsp;y contacto</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="tab-panel relative pt-12 pb-20 sm:pt-16 sm:pb-24" role="tabpanel" aria-labelledby="tab-servicios" tabindex="-1">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div data-reveal>
+            <span class="eyebrow flex items-center gap-3"><span class="w-8 h-px bg-race"></span>01 — Servicios</span>
+            <h2 class="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.02]">Todo lo que tu coche<br class="hidden sm:block"> necesita, <span class="text-race">bajo un techo.</span></h2>
+          </div>
+          <p data-reveal class="max-w-sm text-titanium leading-relaxed">De un cambio de aceite a una reparación de carrocería completa. Trabajamos con todas las marcas y te explicamos cada intervención antes de hacerla.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5" style="perspective:1400px">
+          <!-- 01 -->
+          <article data-reveal class="tilt lg:col-span-7 lg:row-span-2 min-h-[340px]">
+            <div class="tilt-bg"></div><div class="tilt-glare"></div><div class="tilt-holo"></div>
+            <div class="tilt-content h-full p-7 sm:p-9 flex flex-col">
+              <div class="flex items-start justify-between">
+                <span class="icon-chip tilt-float"><i data-lucide="wrench" class="w-6 h-6"></i></span>
+                <span class="tilt-num text-sm">/01</span>
+              </div>
+              <h3 class="mt-auto pt-16 font-display text-3xl sm:text-4xl font-bold text-white leading-tight">Mecánica General y<br>Mantenimiento Integral</h3>
+              <p class="mt-4 max-w-md text-titanium leading-relaxed">Revisiones oficiales sin perder la garantía del fabricante, distribución, embrague, motor y caja de cambios. Mantenimiento preventivo para que tu coche no te deje tirado.</p>
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="chip">Aceite y filtros</span><span class="chip">Distribución</span><span class="chip">Embrague</span><span class="chip">Motor</span><span class="chip">Revisión oficial</span>
+              </div>
+              <button type="button" data-service="mecanica" class="svc-cta mt-7 self-start inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-amber-neon transition-colors">Pedir cita para este servicio <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+            </div>
+          </article>
+
+          <!-- 02 -->
+          <article data-reveal class="tilt lg:col-span-5 min-h-[260px]">
+            <div class="tilt-bg"></div><div class="tilt-glare"></div><div class="tilt-holo"></div>
+            <div class="tilt-content h-full p-7 flex flex-col">
+              <div class="flex items-start justify-between">
+                <span class="icon-chip tilt-float"><i data-lucide="cpu" class="w-6 h-6"></i></span>
+                <span class="tilt-num text-sm">/02</span>
+              </div>
+              <h3 class="mt-8 font-display text-2xl font-bold text-white leading-tight">Diagnóstico Computarizado Multimarca</h3>
+              <p class="mt-3 text-titanium leading-relaxed text-[.95rem]">Lectura de centralitas y averías con equipos de última generación. Encontramos el fallo antes de cambiar piezas.</p>
+              <button type="button" data-service="diagnosis" class="svc-cta mt-auto pt-6 self-start inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-amber-neon transition-colors">Pedir diagnosis <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+            </div>
+          </article>
+
+          <!-- 03 -->
+          <article data-reveal class="tilt lg:col-span-5 min-h-[260px]">
+            <div class="tilt-bg"></div><div class="tilt-glare"></div><div class="tilt-holo"></div>
+            <div class="tilt-content h-full p-7 flex flex-col">
+              <div class="flex items-start justify-between">
+                <span class="icon-chip tilt-float"><i data-lucide="clipboard-check" class="w-6 h-6"></i></span>
+                <span class="tilt-num text-sm">/03</span>
+              </div>
+              <h3 class="mt-8 font-display text-2xl font-bold text-white leading-tight">Revisión Pre-ITV y Gestión</h3>
+              <p class="mt-3 text-titanium leading-relaxed text-[.95rem]">Revisamos los puntos de inspección y, si lo prefieres, llevamos nosotros el coche a la ITV. Sin sustos ni segundas visitas.</p>
+              <button type="button" data-service="itv" class="svc-cta mt-auto pt-6 self-start inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-amber-neon transition-colors">Preparar mi ITV <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+            </div>
+          </article>
+
+          <!-- 04 -->
+          <article data-reveal class="tilt lg:col-span-4 min-h-[260px]">
+            <div class="tilt-bg"></div><div class="tilt-glare"></div><div class="tilt-holo"></div>
+            <div class="tilt-content h-full p-7 flex flex-col">
+              <div class="flex items-start justify-between">
+                <span class="icon-chip tilt-float"><i data-lucide="paintbrush" class="w-6 h-6"></i></span>
+                <span class="tilt-num text-sm">/04</span>
+              </div>
+              <h3 class="mt-8 font-display text-2xl font-bold text-white leading-tight">Chapa, Pintura y Carrocería</h3>
+              <p class="mt-3 text-titanium leading-relaxed text-[.95rem]">Reparación de golpes, igualación de color y acabados de alta precisión. Gestionamos el parte con tu aseguradora.</p>
+              <button type="button" data-service="chapa" class="svc-cta mt-auto pt-6 self-start inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-amber-neon transition-colors">Valorar daños <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+            </div>
+          </article>
+
+          <!-- 05 -->
+          <article data-reveal class="tilt lg:col-span-4 min-h-[260px]">
+            <div class="tilt-bg"></div><div class="tilt-glare"></div><div class="tilt-holo"></div>
+            <div class="tilt-content h-full p-7 flex flex-col">
+              <div class="flex items-start justify-between">
+                <span class="icon-chip tilt-float"><i data-lucide="disc" class="w-6 h-6"></i></span>
+                <span class="tilt-num text-sm">/05</span>
+              </div>
+              <h3 class="mt-8 font-display text-2xl font-bold text-white leading-tight">Neumáticos, Frenos y Suspensión</h3>
+              <p class="mt-3 text-titanium leading-relaxed text-[.95rem]">Montaje, equilibrado y alineación. Pastillas, discos, amortiguadores: tu seguridad, al milímetro.</p>
+              <button type="button" data-service="neumaticos" class="svc-cta mt-auto pt-6 self-start inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-amber-neon transition-colors">Revisar mi seguridad <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+            </div>
+          </article>
+
+          <!-- 06 -->
+          <article data-reveal class="tilt md:col-span-2 lg:col-span-4 min-h-[260px]">
+            <div class="tilt-bg"></div><div class="tilt-glare"></div><div class="tilt-holo"></div>
+            <div class="tilt-content h-full p-7 flex flex-col">
+              <div class="flex items-start justify-between">
+                <span class="icon-chip tilt-float"><i data-lucide="zap" class="w-6 h-6"></i></span>
+                <span class="tilt-num text-sm">/06</span>
+              </div>
+              <h3 class="mt-8 font-display text-2xl font-bold text-white leading-tight">Climatización y Electricidad</h3>
+              <p class="mt-3 text-titanium leading-relaxed text-[.95rem]">Carga y reparación de aire acondicionado, baterías, alternadores, arranque e iluminación. Imprescindible en el verano de Castellón.</p>
+              <button type="button" data-service="clima" class="svc-cta mt-auto pt-6 self-start inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-amber-neon transition-colors">Revisar climatización <i data-lucide="arrow-up-right" class="w-4 h-4"></i></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section id="por-que" class="tab-panel relative pt-12 pb-20 sm:pt-16 sm:pb-28" role="tabpanel" aria-labelledby="tab-por-que" tabindex="-1" hidden>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-5">
+          <span data-reveal class="eyebrow flex items-center gap-3"><span class="w-8 h-px bg-race"></span>02 — Por qué elegirnos</span>
+          <h2 data-reveal class="mt-5 font-display text-4xl sm:text-5xl font-bold text-white tracking-tight leading-[1.05]">Confianza de barrio.<br><span class="text-metal">Precisión de laboratorio.</span></h2>
+          <p data-reveal class="mt-6 text-titanium leading-relaxed">Somos un taller de Almassora, para la gente de Almassora y de toda la Plana. Aquí te atiende siempre alguien que conoce tu coche y su historial, y que te llama antes de tocar nada que no estuviera en el presupuesto.</p>
+          <ul class="mt-8 space-y-4">
+            <li data-reveal class="flex gap-4"><span class="grid place-items-center w-8 h-8 rounded-lg bg-amber-neon/10 text-amber-neon flex-none"><i data-lucide="check" class="w-4 h-4"></i></span><span class="text-steel">Sin sorpresas en la factura: lo que se aprueba es lo que se paga.</span></li>
+            <li data-reveal class="flex gap-4"><span class="grid place-items-center w-8 h-8 rounded-lg bg-amber-neon/10 text-amber-neon flex-none"><i data-lucide="check" class="w-4 h-4"></i></span><span class="text-steel">Te enseñamos las piezas sustituidas y te explicamos el porqué.</span></li>
+            <li data-reveal class="flex gap-4"><span class="grid place-items-center w-8 h-8 rounded-lg bg-amber-neon/10 text-amber-neon flex-none"><i data-lucide="check" class="w-4 h-4"></i></span><span class="text-steel">Revisión oficial sin perder la garantía del fabricante.</span></li>
+          </ul>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-2 gap-4 sm:gap-5">
+          <div data-reveal class="relative glass rounded-3xl p-6 sm:p-8 overflow-hidden">
+            <div class="scanline"></div>
+            <i data-lucide="gauge" class="w-6 h-6 text-titanium"></i>
+            <div class="mt-8 stat-num text-5xl sm:text-6xl font-bold">+<span class="counter" data-count-key="yearsExperience">0</span></div>
+            <p class="mt-3 text-sm text-titanium">Años de experiencia en Almassora</p>
+          </div>
+          <div data-reveal class="relative glass rounded-3xl p-6 sm:p-8 overflow-hidden translate-y-0 lg:translate-y-10">
+            <div class="scanline" style="animation-delay:-1.5s"></div>
+            <i data-lucide="car" class="w-6 h-6 text-titanium"></i>
+            <div class="mt-8 stat-num text-5xl sm:text-6xl font-bold">+<span class="counter" data-count-key="vehiclesRepaired" data-format="thousands">0</span></div>
+            <p class="mt-3 text-sm text-titanium">Vehículos reparados</p>
+          </div>
+          <div data-reveal class="relative glass rounded-3xl p-6 sm:p-8 overflow-hidden">
+            <div class="scanline" style="animation-delay:-3s"></div>
+            <i data-lucide="shield-check" class="w-6 h-6 text-titanium"></i>
+            <div class="mt-8 stat-num text-5xl sm:text-6xl font-bold"><span class="counter" data-count="100">0</span>%</div>
+            <p class="mt-3 text-sm text-titanium">Garantía en piezas y mano de obra</p>
+          </div>
+          <div data-reveal class="relative rounded-3xl p-6 sm:p-8 overflow-hidden lg:translate-y-10 bg-gradient-to-br from-race to-[#b3121a] text-white shadow-[0_30px_80px_-30px_rgba(255,42,42,.7)]">
+            <i data-lucide="handshake" class="w-6 h-6"></i>
+            <div class="mt-8 font-display text-5xl sm:text-6xl font-bold">1:1</div>
+            <p class="mt-3 text-sm text-white/85">Atención personalizada, de tú a tú</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="tab-panel relative pt-12 pb-20 sm:pt-16 sm:pb-24" role="tabpanel" aria-labelledby="tab-proceso" tabindex="-1" hidden>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+          <span data-reveal class="eyebrow inline-flex items-center gap-3"><span class="w-8 h-px bg-race"></span>03 — Proceso<span class="w-8 h-px bg-race"></span></span>
+          <h2 data-reveal class="mt-5 font-display text-4xl sm:text-5xl font-bold text-white tracking-tight">Cuatro pasos. <span class="text-race">Cero sorpresas.</span></h2>
+          <p data-reveal class="mt-5 text-titanium">Así trabajamos con cada coche que entra por la puerta.</p>
+        </div>
+
+        <div id="timeline" class="relative">
+          <!-- desktop line -->
+          <div class="hidden md:block absolute left-[12.5%] right-[12.5%] top-7 h-px bg-white/10" aria-hidden="true">
+            <div id="tlLineH" class="h-full w-full origin-left scale-x-0 bg-gradient-to-r from-race to-amber-neon shadow-[0_0_12px_rgba(255,42,42,.8)]"></div>
+          </div>
+          <!-- mobile line -->
+          <div class="md:hidden absolute left-7 top-7 bottom-7 w-px bg-white/10" aria-hidden="true">
+            <div id="tlLineV" class="w-full h-full origin-top scale-y-0 bg-gradient-to-b from-race to-amber-neon shadow-[0_0_12px_rgba(255,42,42,.8)]"></div>
+          </div>
+
+          <ol class="relative grid md:grid-cols-4 gap-10 md:gap-6">
+            <li class="tl-step flex md:flex-col md:items-center md:text-center gap-6">
+              <span class="tl-node relative z-10 grid place-items-center w-14 h-14 flex-none rounded-full border border-white/15 bg-graphite font-mono text-titanium">01</span>
+              <div>
+                <h3 class="tl-title font-display text-xl font-semibold text-steel">Recepción y diagnóstico</h3>
+                <p class="mt-2 text-sm text-titanium leading-relaxed md:max-w-[15rem] md:mx-auto">Escuchamos lo que le pasa a tu coche y lo comprobamos con diagnosis electrónica y prueba en carretera.</p>
+              </div>
+            </li>
+            <li class="tl-step flex md:flex-col md:items-center md:text-center gap-6">
+              <span class="tl-node relative z-10 grid place-items-center w-14 h-14 flex-none rounded-full border border-white/15 bg-graphite font-mono text-titanium">02</span>
+              <div>
+                <h3 class="tl-title font-display text-xl font-semibold text-steel">Presupuesto transparente</h3>
+                <p class="mt-2 text-sm text-titanium leading-relaxed md:max-w-[15rem] md:mx-auto">Cerrado, detallado y sin compromiso. No empezamos nada sin tu aprobación.</p>
+              </div>
+            </li>
+            <li class="tl-step flex md:flex-col md:items-center md:text-center gap-6">
+              <span class="tl-node relative z-10 grid place-items-center w-14 h-14 flex-none rounded-full border border-white/15 bg-graphite font-mono text-titanium">03</span>
+              <div>
+                <h3 class="tl-title font-display text-xl font-semibold text-steel">Reparación certificada</h3>
+                <p class="mt-2 text-sm text-titanium leading-relaxed md:max-w-[15rem] md:mx-auto">Piezas de calidad original o equivalente y protocolos del fabricante.</p>
+              </div>
+            </li>
+            <li class="tl-step flex md:flex-col md:items-center md:text-center gap-6">
+              <span class="tl-node relative z-10 grid place-items-center w-14 h-14 flex-none rounded-full border border-white/15 bg-graphite font-mono text-titanium">04</span>
+              <div>
+                <h3 class="tl-title font-display text-xl font-semibold text-steel">Entrega a tiempo</h3>
+                <p class="mt-2 text-sm text-titanium leading-relaxed md:max-w-[15rem] md:mx-auto">En la fecha acordada, con factura detallada y garantía por escrito.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <div data-reveal class="mt-20 glass rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <p class="font-display text-2xl sm:text-3xl font-bold text-white">¿Ruido raro, testigo encendido o ITV a la vista?</p>
+            <p class="mt-2 text-titanium">Cuéntanoslo hoy y te damos una primera valoración sin compromiso.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <a data-cfg-tel href="tel:+34000000000" class="btn btn-ghost justify-center px-6 py-3.5 magnetic"><span class="btn-inner"><i data-lucide="phone" class="w-4 h-4"></i><span data-cfg="phone">+34 000 000 000</span></span></a>
+            <a href="#contacto" class="btn btn-race justify-center px-6 py-3.5 magnetic"><span class="btn-inner">Pedir cita <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="tab-panel relative pt-12 pb-20 sm:pt-16 sm:pb-24" role="tabpanel" aria-labelledby="tab-contacto" tabindex="-1" hidden>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="mb-14" data-reveal>
+          <span class="eyebrow flex items-center gap-3"><span class="w-8 h-px bg-race"></span>04 — Cita previa</span>
+          <h2 class="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.02]">Reserva tu cita<br><span class="text-metal">en menos de un minuto.</span></h2>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-5">
+          <!-- FORM -->
+          <div data-reveal class="lg:col-span-7 glass rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            <form id="bookingForm" novalidate class="relative">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div class="field">
+                  <input id="f-name" name="nombre" type="text" placeholder=" " autocomplete="name" required minlength="2">
+                  <label for="f-name">Nombre</label>
+                  <p class="err">Dinos cómo te llamas.</p>
+                </div>
+                <div class="field">
+                  <input id="f-phone" name="telefono" type="tel" placeholder=" " autocomplete="tel" inputmode="tel" required>
+                  <label for="f-phone">Teléfono</label>
+                  <p class="err">Introduce un teléfono válido (9 dígitos).</p>
+                </div>
+                <div class="field sm:col-span-2">
+                  <input id="f-car" name="vehiculo" type="text" placeholder=" " required minlength="3">
+                  <label for="f-car">Matrícula / Marca y modelo</label>
+                  <p class="err">Indica la matrícula o el modelo del vehículo.</p>
+                </div>
+                <div class="field sm:col-span-2">
+                  <select id="f-service" name="servicio" required>
+                    <option value="" disabled selected>Selecciona un servicio…</option>
+                    <option value="mecanica">Mecánica general y mantenimiento</option>
+                    <option value="diagnosis">Diagnóstico computarizado</option>
+                    <option value="itv">Revisión pre-ITV y gestión</option>
+                    <option value="chapa">Chapa, pintura y carrocería</option>
+                    <option value="neumaticos">Neumáticos, frenos y suspensión</option>
+                    <option value="clima">Climatización y electricidad</option>
+                    <option value="otro">Otro / No lo sé</option>
+                  </select>
+                  <label for="f-service">Servicio requerido</label>
+                  <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-titanium pointer-events-none" style="top:1.6rem"></i>
+                  <p class="err">Elige el servicio que necesitas.</p>
+                </div>
+              </div>
+
+              <label class="mt-6 flex items-start gap-3 text-sm text-titanium cursor-pointer field" id="privacyField">
+                <input id="privacy" type="checkbox" class="sr-only" required>
+                <span class="check-box mt-0.5"><svg viewBox="0 0 24 24" class="w-3 h-3 opacity-0 transition-opacity" fill="none" stroke="#fff" stroke-width="3.5"><path d="M5 12l5 5L20 7"/></svg></span>
+                <span>Acepto que Talleres Flores Ballester S.L. use mis datos para gestionar la cita, según la política de privacidad.</span>
+              </label>
+              <p id="privacyErr" class="hidden text-xs text-[#ff6a5a] mt-2 pl-7">Necesitamos tu consentimiento para contactarte.</p>
+
+              <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+                <button type="submit" id="submitBtn" class="btn btn-race justify-center px-8 py-4 text-base magnetic">
+                  <span class="btn-inner"><span id="submitLabel">Solicitar cita</span><i data-lucide="send" class="w-4 h-4"></i></span>
+                </button>
+                <p class="text-xs text-titanium flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-neon"></i>Te llamamos en horario de taller para confirmar.</p>
+              </div>
+            </form>
+
+            <div id="formSuccess" class="hidden absolute inset-0 grid place-items-center p-8 text-center bg-graphite/95 rounded-3xl" role="status" aria-live="polite">
+              <div>
+                <div class="mx-auto grid place-items-center w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-400/30"><i data-lucide="check" class="w-8 h-8"></i></div>
+                <p class="mt-6 font-display text-2xl font-bold text-white">¡Solicitud recibida!</p>
+                <p class="mt-3 text-titanium max-w-sm mx-auto">Gracias, <span id="successName"></span>. Te llamaremos lo antes posible para confirmar día y hora.</p>
+                <button id="formReset" type="button" class="mt-6 btn btn-ghost px-6 py-3 text-sm"><span class="btn-inner">Enviar otra solicitud</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOCATION -->
+          <div class="lg:col-span-5 flex flex-col gap-5">
+            <div data-reveal class="glass rounded-3xl overflow-hidden">
+              <div class="relative h-48 sm:h-56 bg-gunmetal">
+                <iframe id="mapFrame" class="map-frame absolute inset-0 w-full h-full" title="Mapa de Almassora, Castellón" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-graphite/90 to-transparent"></div>
+                <span class="absolute left-4 bottom-4 inline-flex items-center gap-2 rounded-full bg-race px-3 py-1.5 text-xs font-semibold text-white shadow-lg"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>Almassora · Castellón</span>
+              </div>
+              <div class="p-6 sm:p-7 space-y-5">
+                <div class="flex gap-4">
+                  <span class="grid place-items-center w-10 h-10 rounded-xl bg-white/5 text-race flex-none"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+                  <div>
+                    <p class="eyebrow !text-[.62rem]">Dirección</p>
+                    <p class="mt-1 text-white"><span data-cfg="street">[Calle y número]</span></p>
+                    <p class="text-titanium text-sm"><span data-cfg="postal">12550</span> <span data-cfg="city">Almassora</span>, <span data-cfg="province">Castellón</span></p>
+                    <a id="directionsLink" href="https://www.google.com/maps/search/?api=1&query=Almassora%2C%20Castell%C3%B3n" target="_blank" rel="noopener" class="mt-2 inline-flex items-center gap-1.5 text-sm text-amber-neon hover:underline">Cómo llegar <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="grid place-items-center w-10 h-10 rounded-xl bg-white/5 text-race flex-none"><i data-lucide="phone" class="w-5 h-5"></i></span>
+                  <div>
+                    <p class="eyebrow !text-[.62rem]">Teléfono</p>
+                    <a data-cfg-tel href="tel:+34000000000" class="mt-1 block text-white text-lg font-display font-semibold hover:text-race transition-colors"><span data-cfg="phone">+34 000 000 000</span></a>
+                  </div>
+                </div>
+                <div class="flex gap-4">
+                  <span class="grid place-items-center w-10 h-10 rounded-xl bg-white/5 text-race flex-none"><i data-lucide="mail" class="w-5 h-5"></i></span>
+                  <div>
+                    <p class="eyebrow !text-[.62rem]">Email</p>
+                    <a data-cfg-mail href="mailto:info@ejemplo.com" class="mt-1 block text-white hover:text-race transition-colors break-all"><span data-cfg="email">info@ejemplo.com</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-reveal class="glass rounded-3xl p-6 sm:p-7">
+              <div class="flex items-center justify-between">
+                <p class="eyebrow flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-neon"></i>Horario</p>
+                <span id="openBadge" class="font-mono text-[.65rem] tracking-[.18em] px-2.5 py-1 rounded-full border"></span>
+              </div>
+              <ul id="hoursList" class="mt-5 divide-y divide-white/5 text-sm"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t hairline bg-carbon/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid gap-12 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <p class="font-display font-bold text-white tracking-[.18em] text-lg">FLORES BALLESTER</p>
+        <p class="font-mono text-[.62rem] tracking-[.3em] text-titanium mt-1">TALLERES · S.L.</p>
+        <p class="mt-6 text-titanium max-w-sm leading-relaxed">Taller mecánico multimarca en Almassora. Mecánica, diagnosis, pre-ITV, chapa y pintura, neumáticos, climatización y electricidad.</p>
+        <p class="mt-4 text-xs text-titanium/70">Damos servicio en Almassora, Castellón de la Plana, Vila-real, Borriol, Benicàssim y alrededores.</p>
+      </div>
+      <div class="md:col-span-3">
+        <p class="eyebrow mb-5">Servicios</p>
+        <ul class="space-y-2.5 text-sm text-titanium">
+          <li><a class="hover:text-white transition-colors" href="#servicios">Mecánica general</a></li>
+          <li><a class="hover:text-white transition-colors" href="#servicios">Diagnosis multimarca</a></li>
+          <li><a class="hover:text-white transition-colors" href="#servicios">Pre-ITV</a></li>
+          <li><a class="hover:text-white transition-colors" href="#servicios">Chapa y pintura</a></li>
+          <li><a class="hover:text-white transition-colors" href="#servicios">Neumáticos y frenos</a></li>
+          <li><a class="hover:text-white transition-colors" href="#servicios">Climatización</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4">
+        <p class="eyebrow mb-5">Contacto</p>
+        <ul class="space-y-3 text-sm text-titanium">
+          <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-race flex-none"></i><span><span data-cfg="street">[Calle y número]</span>, <span data-cfg="postal">12550</span> <span data-cfg="city">Almassora</span> (<span data-cfg="province">Castellón</span>)</span></li>
+          <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 mt-0.5 text-race flex-none"></i><a data-cfg-tel href="tel:+34000000000" class="hover:text-white"><span data-cfg="phone">+34 000 000 000</span></a></li>
+          <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 mt-0.5 text-race flex-none"></i><a data-cfg-mail href="mailto:info@ejemplo.com" class="hover:text-white break-all"><span data-cfg="email">info@ejemplo.com</span></a></li>
+        </ul>
+        <a href="#contacto" class="mt-6 btn btn-race px-6 py-3 text-sm magnetic"><span class="btn-inner">Pedir cita <i data-lucide="arrow-right" class="w-4 h-4"></i></span></a>
+      </div>
+    </div>
+    <div class="border-t hairline">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row gap-3 justify-between text-xs text-titanium/70">
+        <p>© <span id="year"></span> Talleres Flores Ballester S.L. Todos los derechos reservados.</p>
+        <p class="flex gap-5">
+          <a data-cfg-legal="aviso" href="#" class="hover:text-white">Aviso legal</a>
+          <a data-cfg-legal="privacidad" href="#" class="hover:text-white">Privacidad</a>
+          <a data-cfg-legal="cookies" href="#" class="hover:text-white">Cookies</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="md:hidden fixed inset-x-0 bottom-0 z-50 px-3 pt-3 pb-[calc(.75rem+env(safe-area-inset-bottom))] bg-carbon/85 backdrop-blur-xl border-t hairline">
+    <div class="grid grid-cols-2 gap-2">
+      <a data-cfg-tel href="tel:+34000000000" class="btn btn-ghost justify-center py-3.5 text-sm"><span class="btn-inner"><i data-lucide="phone" class="w-4 h-4"></i>Llamar</span></a>
+      <a href="#contacto" class="btn btn-race justify-center py-3.5 text-sm"><span class="btn-inner"><i data-lucide="calendar-check" class="w-4 h-4"></i>Pedir cita</span></a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+
+  <script>
+  /* =========================================================
+     CONFIGURACIÓN — EDITA AQUÍ LOS DATOS REALES DEL TALLER
+     ========================================================= */
+  const CONFIG = {
+    phone: '+34 000 000 000',        // Teléfono tal y como se muestra
+    phoneHref: '+34000000000',       // Teléfono para el enlace tel: (sin espacios)
+    email: 'info@ejemplo.com',
+    street: '[Calle y número]',
+    postal: '12550',
+    city: 'Almassora',
+    province: 'Castellón',
+    mapsQuery: 'Almassora, Castellón', // Cámbialo por la dirección exacta para centrar el mapa
+    yearsExperience: 25,             // Valor de ejemplo: pon el real
+    vehiclesRepaired: 10000,         // Valor de ejemplo: pon el real
+    formEndpoint: '',                // URL que recibe el formulario (POST JSON). Vacío = modo demo
+    whatsapp: '',                    // Ej. '34600000000'. Si hay número y no hay endpoint, la cita se envía por WhatsApp
+    legal: { aviso: '#', privacidad: '#', cookies: '#' },
+    // Día: 0 = domingo … 6 = sábado. Horario de ejemplo: ajústalo.
+    hours: [
+      { label: 'Lunes – Viernes', days: [1,2,3,4,5], ranges: [['08:00','13:30'], ['15:30','19:00']] },
+      { label: 'Sábado',          days: [6],         ranges: [] },
+      { label: 'Domingo',         days: [0],         ranges: [] }
+    ]
+  };
+
+  (function(){
+    'use strict';
+    const hasGSAP = typeof window.gsap !== 'undefined';
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const isMobile = window.innerWidth < 768;
+    if (!hasGSAP || reduceMotion) document.documentElement.classList.remove('js');
+
+    /* ---------- Config binding ---------- */
+    document.querySelectorAll('[data-cfg]').forEach(el => {
+      const k = el.getAttribute('data-cfg');
+      if (CONFIG[k] !== undefined) el.textContent = CONFIG[k];
+    });
+    document.querySelectorAll('[data-cfg-tel]').forEach(el => el.setAttribute('href', 'tel:' + CONFIG.phoneHref));
+    document.querySelectorAll('[data-cfg-mail]').forEach(el => el.setAttribute('href', 'mailto:' + CONFIG.email));
+    document.querySelectorAll('[data-cfg-legal]').forEach(el => el.setAttribute('href', CONFIG.legal[el.getAttribute('data-cfg-legal')] || '#'));
+    const mapQ = encodeURIComponent(CONFIG.mapsQuery);
+    document.getElementById('mapFrame').src = 'https://www.google.com/maps?q=' + mapQ + '&z=14&output=embed';
+    document.getElementById('directionsLink').href = 'https://www.google.com/maps/search/?api=1&query=' + mapQ;
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ---------- Hours + open now ---------- */
+    (function renderHours(){
+      const list = document.getElementById('hoursList');
+      const now = new Date(); const day = now.getDay();
+      const mins = now.getHours() * 60 + now.getMinutes();
+      const toMin = s => { const [h, m] = s.split(':').map(Number); return h * 60 + m; };
+      let open = false;
+      CONFIG.hours.forEach(row => {
+        const today = row.days.includes(day);
+        if (today) row.ranges.forEach(([a, b]) => { if (mins >= toMin(a) && mins < toMin(b)) open = true; });
+        const li = document.createElement('li');
+        li.className = 'flex justify-between gap-4 py-3' + (today ? ' text-white' : ' text-titanium');
+        const l = document.createElement('span'); l.textContent = row.label + (today ? ' · hoy' : '');
+        const r = document.createElement('span'); r.className = 'font-mono text-right';
+        r.textContent = row.ranges.length ? row.ranges.map(x => x.join(' – ')).join(' / ') : 'Cerrado';
+        if (!row.ranges.length) r.classList.add('text-race');
+        li.append(l, r); list.appendChild(li);
+      });
+      const badge = document.getElementById('openBadge');
+      badge.textContent = open ? '● ABIERTO AHORA' : '● CERRADO AHORA';
+      badge.className += open ? ' text-emerald-400 border-emerald-400/30 bg-emerald-400/5' : ' text-titanium border-white/10';
+    })();
+
+    /* ---------- Icons ---------- */
+    if (window.lucide) window.lucide.createIcons();
+
+    /* ---------- Mobile menu ---------- */
+    const menu = document.getElementById('mobileMenu');
+    const menuBtn = document.getElementById('menuBtn');
+    function setMenu(open){
+      menu.classList.toggle('open', open);
+      menu.setAttribute('aria-hidden', String(!open));
+      menuBtn.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open && hasGSAP && !reduceMotion) gsap.fromTo('.mm-link', { y: 40, opacity: 0 }, { y: 0, opacity: 1, stagger: .06, duration: .6, delay: .25, ease: 'power3.out' });
+    }
+    menuBtn.addEventListener('click', () => setMenu(true));
+    document.getElementById('menuClose').addEventListener('click', () => setMenu(false));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false); });
+
+    /* ---------- Navbar state ---------- */
+    const nav = document.getElementById('nav');
+    const hud = document.getElementById('hudScroll');
+    function navState(){
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (hud) hud.textContent = String(Math.round(max > 0 ? window.scrollY / max * 100 : 0)).padStart(3, '0');
+    }
+    window.addEventListener('scroll', navState, { passive: true }); navState();
+
+    /* ---------- Service CTA -> preselect ---------- */
+    const select = document.getElementById('f-service');
+    document.querySelectorAll('.svc-cta').forEach(b => b.addEventListener('click', () => {
+      select.value = b.dataset.service;
+      select.closest('.field').classList.remove('invalid');
+      activateTab('contacto', { scroll: 'force' });
+      setTimeout(() => document.getElementById('f-name').focus({ preventScroll: true }), reduceMotion ? 0 : 900);
+    }));
+
+    /* ---------- 3D tilt cards ---------- */
+    if (finePointer && !reduceMotion) {
+      document.querySelectorAll('.tilt').forEach(card => {
+        let raf = null;
+        card.addEventListener('pointerenter', () => card.classList.add('is-tilting'));
+        card.addEventListener('pointermove', e => {
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width;
+            const y = (e.clientY - r.top) / r.height;
+            card.style.setProperty('--rx', ((0.5 - y) * 12).toFixed(2) + 'deg');
+            card.style.setProperty('--ry', ((x - 0.5) * 14).toFixed(2) + 'deg');
+            card.style.setProperty('--mx', (x * 100).toFixed(1) + '%');
+            card.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+            card.style.setProperty('--angle', (Math.atan2(y - 0.5, x - 0.5) * 180 / Math.PI + 90).toFixed(1) + 'deg');
+          });
+        });
+        card.addEventListener('pointerleave', () => {
+          if (raf) cancelAnimationFrame(raf);
+          card.classList.remove('is-tilting');
+          card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg');
+        });
+      });
+    }
+
+    /* ---------- Magnetic buttons ---------- */
+    if (finePointer && !reduceMotion && hasGSAP) {
+      document.querySelectorAll('.magnetic').forEach(btn => {
+        const xTo = gsap.quickTo(btn, 'x', { duration: .5, ease: 'power3.out' });
+        const yTo = gsap.quickTo(btn, 'y', { duration: .5, ease: 'power3.out' });
+        btn.addEventListener('pointermove', e => {
+          const r = btn.getBoundingClientRect();
+          xTo((e.clientX - (r.left + r.width / 2)) * 0.3);
+          yTo((e.clientY - (r.top + r.height / 2)) * 0.45);
+        });
+        btn.addEventListener('pointerleave', () => {
+          gsap.to(btn, { x: 0, y: 0, duration: .9, ease: 'elastic.out(1, .35)' });
+        });
+      });
+    }
+
+    /* ---------- Form ---------- */
+    const form = document.getElementById('bookingForm');
+    const success = document.getElementById('formSuccess');
+    const privacy = document.getElementById('privacy');
+    const privacyErr = document.getElementById('privacyErr');
+    const phoneOk = v => /^(\+?34)?[\s-]?[6789](\s?-?\d){8}$/.test(v.trim());
+    function validateField(input){
+      const f = input.closest('.field');
+      let ok = input.checkValidity();
+      if (input.id === 'f-phone') ok = phoneOk(input.value);
+      f.classList.toggle('invalid', !ok);
+      return ok;
+    }
+    ['f-name','f-phone','f-car','f-service'].forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('blur', () => { if (el.value) validateField(el); });
+      el.addEventListener('input', () => { if (el.closest('.field').classList.contains('invalid')) validateField(el); });
+      el.addEventListener('change', () => validateField(el));
+    });
+    privacy.addEventListener('change', () => privacyErr.classList.toggle('hidden', privacy.checked));
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const fields = ['f-name','f-phone','f-car','f-service'].map(id => document.getElementById(id));
+      const results = fields.map(validateField);
+      const priv = privacy.checked; privacyErr.classList.toggle('hidden', priv);
+      if (results.includes(false) || !priv) {
+        const firstBad = fields[results.indexOf(false)] || privacy;
+        firstBad.focus();
+        if (hasGSAP && !reduceMotion) gsap.fromTo(form, { x: -8 }, { x: 0, duration: .5, ease: 'elastic.out(1,.3)' });
+        return;
+      }
+      const data = {
+        nombre: fields[0].value.trim(), telefono: fields[1].value.trim(),
+        vehiculo: fields[2].value.trim(), servicio: fields[3].options[fields[3].selectedIndex].text
+      };
+      const btn = document.getElementById('submitBtn'); const label = document.getElementById('submitLabel');
+      btn.disabled = true; label.textContent = 'Enviando…';
+      try {
+        if (CONFIG.formEndpoint) {
+          const res = await fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+        } else if (CONFIG.whatsapp) {
+          const msg = `Hola, quiero pedir cita.\nNombre: ${data.nombre}\nTeléfono: ${data.telefono}\nVehículo: ${data.vehiculo}\nServicio: ${data.servicio}`;
+          window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+        } else {
+          await new Promise(r => setTimeout(r, 700));
+        }
+        document.getElementById('successName').textContent = data.nombre.split(' ')[0];
+        success.classList.remove('hidden');
+        if (hasGSAP && !reduceMotion) gsap.fromTo(success, { opacity: 0, scale: .96 }, { opacity: 1, scale: 1, duration: .5, ease: 'power3.out' });
+      } catch (err) {
+        label.textContent = 'Error. Llámanos';
+        setTimeout(() => { label.textContent = 'Solicitar cita'; }, 3000);
+      } finally {
+        btn.disabled = false;
+        if (label.textContent === 'Enviando…') label.textContent = 'Solicitar cita';
+      }
+    });
+    document.getElementById('formReset').addEventListener('click', () => {
+      form.reset(); success.classList.add('hidden');
+      form.querySelectorAll('.field').forEach(f => f.classList.remove('invalid'));
+    });
+
+    /* ---------- Counters ---------- */
+    function formatNum(n, fmt){ return fmt === 'thousands' ? Math.round(n).toLocaleString('es-ES') : String(Math.round(n)); }
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(el => {
+      const target = el.dataset.countKey ? CONFIG[el.dataset.countKey] : Number(el.dataset.count);
+      el.dataset.target = target;
+      if (!hasGSAP || reduceMotion) el.textContent = formatNum(target, el.dataset.format);
+    });
+
+    /* =========================================================
+       THREE.JS — Núcleo mecánico procedural
+       ========================================================= */
+    const scene3d = { intro: { v: reduceMotion ? 1 : 0 } };
+    (function initWebGL(){
+      const canvas = document.getElementById('webgl');
+      if (!window.THREE) { document.documentElement.classList.add('no-webgl'); return; }
+      let renderer;
+      try {
+        renderer = new THREE.WebGLRenderer({ canvas, antialias: !isMobile, alpha: true, powerPreference: 'high-performance' });
+      } catch (err) { document.documentElement.classList.add('no-webgl'); return; }
+
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+      renderer.setSize(window.innerWidth, window.innerHeight, false);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.05;
+      renderer.setClearColor(0x0a0a0b, 1);
+
+      const scene = new THREE.Scene();
+      scene.fog = new THREE.FogExp2(0x0a0a0b, 0.05);
+      const camera = new THREE.PerspectiveCamera(isMobile ? 50 : 38, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 10);
+
+      /* Studio environment for metal reflections (no external HDR) */
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      const envScene = new THREE.Scene();
+      envScene.background = new THREE.Color(0x030304);
+      const panelGeo = new THREE.PlaneGeometry(1, 1);
+      function softbox(hex, k, pos, scl){
+        const m = new THREE.MeshBasicMaterial({ color: new THREE.Color(hex).multiplyScalar(k), side: THREE.DoubleSide });
+        const p = new THREE.Mesh(panelGeo, m);
+        p.position.set(pos[0], pos[1], pos[2]); p.scale.set(scl[0], scl[1], 1); p.lookAt(0, 0, 0);
+        envScene.add(p);
+      }
+      softbox(0xffffff, 2.6, [0, 7, 1], [9, 5]);
+      softbox(0xff3020, 3.0, [-7, 0.5, 2], [2.5, 9]);
+      softbox(0x3a7bff, 2.4, [7, -0.5, 2], [2.5, 9]);
+      softbox(0xffffff, 1.3, [0, -1, 8], [10, 1.2]);
+      softbox(0xffb020, 1.2, [0, -7, -2], [6, 3]);
+      const envRT = pmrem.fromScene(envScene, 0.035);
+      scene.environment = envRT.texture;
+      envScene.traverse(o => { if (o.material) o.material.dispose(); });
+      pmrem.dispose();
+
+      /* Materials */
+      const matCarbon = new THREE.MeshPhysicalMaterial({ color: 0x1c1d21, metalness: 0.9, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.15, flatShading: true });
+      const matTitanium = new THREE.MeshStandardMaterial({ color: 0xa7acb4, metalness: 1, roughness: 0.22 });
+      const matDarkSteel = new THREE.MeshStandardMaterial({ color: 0x4a4e55, metalness: 1, roughness: 0.32 });
+      const matRace = new THREE.MeshPhysicalMaterial({ color: 0xff2a2a, metalness: 0.75, roughness: 0.25, emissive: 0x3a0000, clearcoat: 1 });
+      const matGlow = new THREE.MeshBasicMaterial({ color: 0xff3a1a });
+
+      /* Rig */
+      const rig = new THREE.Group(); scene.add(rig);
+      const core = new THREE.Group(); rig.add(core);
+
+      const shell = new THREE.Mesh(new THREE.IcosahedronGeometry(1.05, 1), matCarbon);
+      core.add(shell);
+      const heart = new THREE.Mesh(new THREE.IcosahedronGeometry(0.42, 3), matGlow);
+      core.add(heart);
+      const cage = new THREE.LineSegments(
+        new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(1.42, 1)),
+        new THREE.LineBasicMaterial({ color: 0xffb020, transparent: true, opacity: 0.28 })
+      );
+      core.add(cage);
+
+      /* Glow sprite */
+      const gCanvas = document.createElement('canvas'); gCanvas.width = gCanvas.height = 256;
+      const g = gCanvas.getContext('2d');
+      const grd = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+      grd.addColorStop(0, 'rgba(255,70,40,0.9)'); grd.addColorStop(0.25, 'rgba(255,42,42,0.35)'); grd.addColorStop(1, 'rgba(255,42,42,0)');
+      g.fillStyle = grd; g.fillRect(0, 0, 256, 256);
+      const glowTex = new THREE.CanvasTexture(gCanvas);
+      const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTex, blending: THREE.AdditiveBlending, depthWrite: false, transparent: true, opacity: 0.85 }));
+      glow.scale.set(5.5, 5.5, 1);
+      rig.add(glow);
+
+      /* Gyro rings */
+      const rings = [];
+      const ringDefs = [
+        { r: 1.95, tube: 0.045, mat: matTitanium, tilt: [Math.PI / 2.3, 0, 0], speed: 0.35 },
+        { r: 2.45, tube: 0.07,  mat: matRace,     tilt: [0.35, Math.PI / 3.2, 0], speed: -0.25 },
+        { r: 3.0,  tube: 0.035, mat: matDarkSteel, tilt: [-0.6, -0.4, 0.3], speed: 0.18 }
+      ];
+      ringDefs.forEach((d, i) => {
+        const pivot = new THREE.Group();
+        pivot.rotation.set(d.tilt[0], d.tilt[1], d.tilt[2]);
+        const spinner = new THREE.Group();
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(d.r, d.tube, 20, 160), d.mat);
+        spinner.add(ring);
+        if (i === 1) {
+          const boltCount = 24;
+          const bolts = new THREE.InstancedMesh(new THREE.BoxGeometry(0.09, 0.22, 0.18), matTitanium, boltCount);
+          const dummy = new THREE.Object3D();
+          for (let b = 0; b < boltCount; b++) {
+            const a = b / boltCount * Math.PI * 2;
+            dummy.position.set(Math.cos(a) * d.r, Math.sin(a) * d.r, 0);
+            dummy.rotation.set(0, 0, a);
+            dummy.updateMatrix(); bolts.setMatrixAt(b, dummy.matrix);
+          }
+          spinner.add(bolts);
+        }
+        if (i === 0) {
+          for (let k = 0; k < 3; k++) {
+            const a = k / 3 * Math.PI * 2;
+            const node = new THREE.Mesh(new THREE.SphereGeometry(0.11, 20, 20), matGlow);
+            node.position.set(Math.cos(a) * d.r, Math.sin(a) * d.r, 0);
+            spinner.add(node);
+          }
+        }
+        pivot.add(spinner); rig.add(pivot);
+        rings.push({ spinner, speed: d.speed });
+      });
+
+      /* Gears (extruded shapes) */
+      function gearShape(teeth, rOuter, rRoot, holeR){
+        const s = new THREE.Shape(); const step = Math.PI * 2 / teeth;
+        for (let i = 0; i < teeth; i++) {
+          const a = i * step;
+          const pts = [[rRoot, a], [rOuter, a + step * 0.18], [rOuter, a + step * 0.46], [rRoot, a + step * 0.64]];
+          pts.forEach(([r, ang], j) => {
+            const x = Math.cos(ang) * r, y = Math.sin(ang) * r;
+            if (i === 0 && j === 0) s.moveTo(x, y); else s.lineTo(x, y);
+          });
+          const next = (i + 1) * step;
+          s.lineTo(Math.cos(next) * rRoot, Math.sin(next) * rRoot);
+        }
+        s.closePath();
+        const hole = new THREE.Path(); hole.absarc(0, 0, holeR, 0, Math.PI * 2, true); s.holes.push(hole);
+        for (let k = 0; k < 5; k++) {
+          const a = k / 5 * Math.PI * 2, rr = (holeR + rRoot) / 2;
+          const p = new THREE.Path(); p.absarc(Math.cos(a) * rr, Math.sin(a) * rr, (rRoot - holeR) * 0.22, 0, Math.PI * 2, true); s.holes.push(p);
+        }
+        return s;
+      }
+      const extrude = { depth: 0.16, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.025, bevelSegments: 2, curveSegments: 18 };
+      const gearAGeo = new THREE.ExtrudeGeometry(gearShape(18, 1.0, 0.87, 0.28), extrude); gearAGeo.center();
+      const gearBGeo = new THREE.ExtrudeGeometry(gearShape(12, 0.68, 0.56, 0.2), extrude); gearBGeo.center();
+      const gears = new THREE.Group();
+      const gearA = new THREE.Mesh(gearAGeo, matTitanium);
+      const gearB = new THREE.Mesh(gearBGeo, matDarkSteel);
+      const centerDist = (0.935 + 0.62);
+      gearB.position.set(Math.cos(-0.55) * centerDist, Math.sin(-0.55) * centerDist, 0);
+      gearB.rotation.z = Math.PI / 12;
+      gears.add(gearA, gearB);
+      gears.position.set(-2.6, -2.2, -1.6);
+      gears.rotation.set(-0.5, 0.55, 0.1);
+      gears.scale.setScalar(0.85);
+      rig.add(gears);
+
+      /* Floating hex nuts */
+      const nutGeo = new THREE.CylinderGeometry(0.2, 0.2, 0.13, 6, 1);
+      const nuts = [];
+      for (let i = 0; i < (isMobile ? 7 : 13); i++) {
+        const n = new THREE.Mesh(nutGeo, i % 4 === 0 ? matRace : matTitanium);
+        const a = Math.random() * Math.PI * 2, rr = 3.4 + Math.random() * 2.6;
+        n.position.set(Math.cos(a) * rr, (Math.random() - 0.5) * 4.5, Math.sin(a) * rr * 0.6 - 1);
+        n.rotation.set(Math.random() * 6, Math.random() * 6, Math.random() * 6);
+        n.scale.setScalar(0.5 + Math.random() * 0.8);
+        n.userData = { sx: (Math.random() - .5) * .8, sy: (Math.random() - .5) * .8, fy: Math.random() * Math.PI * 2, by: n.position.y };
+        rig.add(n); nuts.push(n);
+      }
+
+      /* Particle tunnel */
+      const PCOUNT = isMobile ? 700 : 1800;
+      const pPos = new Float32Array(PCOUNT * 3);
+      for (let i = 0; i < PCOUNT; i++) {
+        const a = Math.random() * Math.PI * 2, rr = 2.2 + Math.random() * 7;
+        pPos[i * 3] = Math.cos(a) * rr; pPos[i * 3 + 1] = Math.sin(a) * rr; pPos[i * 3 + 2] = -18 + Math.random() * 24;
+      }
+      const pGeo = new THREE.BufferGeometry();
+      pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+      const pMat = new THREE.PointsMaterial({ color: 0xffb070, size: isMobile ? 0.04 : 0.028, transparent: true, opacity: 0.75, blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true });
+      const particles = new THREE.Points(pGeo, pMat);
+      scene.add(particles);
+
+      /* Lights */
+      scene.add(new THREE.AmbientLight(0xffffff, 0.08));
+      const key = new THREE.DirectionalLight(0xffffff, 0.6); key.position.set(3, 5, 6); scene.add(key);
+      const lightRed = new THREE.PointLight(0xff2a2a, 4.5, 18, 1.6); scene.add(lightRed);
+      const lightBlue = new THREE.PointLight(0x3a7bff, 3.6, 18, 1.6); scene.add(lightBlue);
+
+      /* Interaction state */
+      const st = { tmx: 0, tmy: 0, mx: 0, my: 0, ts: 0, s: 0, hero: 0, vel: 0, lastY: window.scrollY };
+      window.addEventListener('pointermove', e => {
+        st.tmx = e.clientX / window.innerWidth * 2 - 1;
+        st.tmy = -(e.clientY / window.innerHeight * 2 - 1);
+      }, { passive: true });
+      function readScroll(){
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        st.ts = max > 0 ? window.scrollY / max : 0;
+        st.hero = Math.min(window.scrollY / window.innerHeight, 1);
+      }
+      window.addEventListener('scroll', readScroll, { passive: true }); readScroll();
+
+      let desktopLayout = window.innerWidth >= 1024;
+      function onResize(){
+        const w = window.innerWidth, h = window.innerHeight;
+        renderer.setSize(w, h, false);
+        camera.aspect = w / h;
+        camera.fov = w < 768 ? 50 : 38;
+        camera.updateProjectionMatrix();
+        desktopLayout = w >= 1024;
+      }
+      window.addEventListener('resize', onResize);
+
+      const clock = new THREE.Clock();
+      let running = true;
+      document.addEventListener('visibilitychange', () => {
+        running = !document.hidden;
+        if (running) { clock.getDelta(); requestAnimationFrame(tick); }
+      });
+      const motion = reduceMotion ? 0.25 : 1;
+      const lerp = (a, b, t) => a + (b - a) * t;
+
+      function tick(){
+        if (!running) return;
+        const dt = Math.min(clock.getDelta(), 0.05);
+        const t = clock.elapsedTime;
+
+        st.mx = lerp(st.mx, st.tmx, 0.05);
+        st.my = lerp(st.my, st.tmy, 0.05);
+        st.s = lerp(st.s, st.ts, 0.07);
+        const y = window.scrollY, dy = Math.abs(y - st.lastY); st.lastY = y;
+        st.vel = lerp(st.vel, Math.min(dy, 80), 0.08);
+        const boost = (1 + st.vel * 0.06) * motion;
+
+        /* rig placement: right of headline on desktop, centered behind it on mobile */
+        const intro = scene3d.intro.v;
+        const baseX = desktopLayout ? 2.6 : 0;
+        const baseY = desktopLayout ? 0 : 1.4;
+        rig.position.x = lerp(rig.position.x, baseX + (desktopLayout ? st.hero * 0.9 : 0), 0.08);
+        rig.position.y = lerp(rig.position.y, baseY - st.s * 1.2, 0.08);
+        const sc = intro * (desktopLayout ? 1 : 0.72) * (1 - st.hero * 0.12);
+        rig.scale.setScalar(Math.max(sc, 0.0001));
+        rig.rotation.y = st.mx * 0.35 + st.s * Math.PI * 2.2;
+        rig.rotation.x = -st.my * 0.25 + st.s * 0.9;
+
+        shell.rotation.x += dt * 0.18 * boost; shell.rotation.y += dt * 0.24 * boost;
+        cage.rotation.y -= dt * 0.12 * boost; cage.rotation.z += dt * 0.05 * boost;
+        const pulse = 1 + Math.sin(t * 2.2) * 0.08 * motion;
+        heart.scale.setScalar(pulse);
+        glow.material.opacity = 0.6 + Math.sin(t * 2.2) * 0.15 * motion;
+        rings.forEach(r => { r.spinner.rotation.z += dt * r.speed * boost; });
+        gearA.rotation.z += dt * 0.45 * boost;
+        gearB.rotation.z -= dt * 0.45 * boost * (18 / 12);
+        nuts.forEach(n => {
+          n.rotation.x += dt * n.userData.sx * boost; n.rotation.y += dt * n.userData.sy * boost;
+          n.position.y = n.userData.by + Math.sin(t * 0.6 + n.userData.fy) * 0.25 * motion;
+        });
+
+        /* particle tunnel flows toward camera, faster with scroll velocity */
+        const arr = pGeo.attributes.position.array;
+        const pv = dt * (0.5 + st.vel * 0.12) * motion;
+        for (let i = 2; i < arr.length; i += 3) { arr[i] += pv; if (arr[i] > 6) arr[i] -= 24; }
+        pGeo.attributes.position.needsUpdate = true;
+        particles.rotation.z += dt * 0.02 * motion;
+
+        /* lights follow cursor (lerped) */
+        lightRed.position.x = lerp(lightRed.position.x, rig.position.x + st.mx * 4.5, 0.06);
+        lightRed.position.y = lerp(lightRed.position.y, rig.position.y + st.my * 3, 0.06);
+        lightRed.position.z = 3.2;
+        lightBlue.position.x = lerp(lightBlue.position.x, rig.position.x - st.mx * 4.5, 0.04);
+        lightBlue.position.y = lerp(lightBlue.position.y, rig.position.y - st.my * 3 - 0.5, 0.04);
+        lightBlue.position.z = 2.4;
+
+        /* camera: gentle parallax + dolly on scroll */
+        camera.position.x = lerp(camera.position.x, st.mx * 0.5, 0.04);
+        camera.position.y = lerp(camera.position.y, st.my * 0.35, 0.04);
+        camera.position.z = 10 + st.s * 3.5 - st.hero * 0.8;
+        camera.lookAt(0, 0, 0);
+
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    })();
+
+    /* =========================================================
+       GSAP — Intro, reveals, counters, timeline
+       ========================================================= */
+    const loader = document.getElementById('loader');
+    const loaderBar = document.getElementById('loaderBar');
+    requestAnimationFrame(() => { loaderBar.style.transform = 'scaleX(1)'; });
+
+    function startIntro(){
+      loader.classList.add('done');
+      if (!hasGSAP || reduceMotion) { scene3d.intro.v = 1; return; }
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      tl.to(scene3d.intro, { v: 1, duration: 2.2, ease: 'expo.out' }, 0)
+        .to('.line > span', { y: 0, duration: 1.2, stagger: 0.09 }, 0.15)
+        .to('.hero-fade', { opacity: 1, duration: 1, stagger: 0.08, ease: 'power2.out' }, 0.6)
+        .from('.hero-fade', { y: 20, duration: 1, stagger: 0.08, ease: 'power3.out', clearProps: 'transform' }, 0.6);
+    }
+    let introStarted = false;
+    function kick(){ if (introStarted) return; introStarted = true; setTimeout(startIntro, reduceMotion ? 0 : 650); }
+    if (document.readyState === 'complete') kick(); else window.addEventListener('load', kick);
+    setTimeout(kick, 3000);
+
+    if (hasGSAP && !reduceMotion) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* dim 3D layer after hero so content stays legible */
+      gsap.to('#webgl', { opacity: isMobile ? 0.22 : 0.38, ease: 'none', scrollTrigger: { trigger: '#inicio', start: 'top top', end: 'bottom top', scrub: true } });
+
+      window.addEventListener('load', () => ScrollTrigger.refresh());
+    }
+
+    /* =========================================================
+       PESTAÑAS — Servicios / Por qué / Proceso / Cita
+       ========================================================= */
+    const animate = hasGSAP && !reduceMotion;
+    const tabsRoot = document.getElementById('tabs');
+    const tabBtns = Array.from(document.querySelectorAll('[role="tab"]'));
+    const panels = tabBtns.map(b => document.getElementById(b.getAttribute('aria-controls')));
+    const panelIds = panels.map(p => p.id);
+    const indicator = document.getElementById('tabIndicator');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let currentTab = panelIds[0];
+    let tabsSeen = false;
+    let processTl = null;
+
+    function moveIndicator(){
+      const btn = tabBtns[panelIds.indexOf(currentTab)];
+      indicator.style.width = btn.offsetWidth + 'px';
+      indicator.style.transform = 'translateX(' + btn.offsetLeft + 'px)';
+      const bar = btn.parentElement;
+      if (bar.scrollWidth > bar.clientWidth) {
+        bar.scrollTo({ left: btn.offsetLeft - (bar.clientWidth - btn.offsetWidth) / 2, behavior: animate ? 'smooth' : 'auto' });
+      }
+    }
+
+    function runPanelExtras(panel){
+      /* counters */
+      panel.querySelectorAll('.counter').forEach(el => {
+        const target = Number(el.dataset.target);
+        if (!animate) { el.textContent = formatNum(target, el.dataset.format); return; }
+        if (el._tw) el._tw.kill();
+        const obj = { n: 0 }; el.textContent = '0';
+        el._tw = gsap.to(obj, { n: target, duration: 2, delay: .35, ease: 'power3.out', onUpdate: () => { el.textContent = formatNum(obj.n, el.dataset.format); } });
+      });
+      /* process timeline */
+      if (panel.id === 'proceso') {
+        const steps = Array.from(panel.querySelectorAll('.tl-step'));
+        const lineH = document.getElementById('tlLineH'), lineV = document.getElementById('tlLineV');
+        if (!animate) {
+          steps.forEach(s => s.classList.add('is-active'));
+          lineH.style.transform = 'none'; lineV.style.transform = 'none';
+          return;
+        }
+        if (processTl) processTl.kill();
+        steps.forEach(s => s.classList.remove('is-active'));
+        processTl = gsap.timeline({ delay: .3 });
+        processTl.fromTo(lineH, { scaleX: 0 }, { scaleX: 1, duration: 2.6, ease: 'power1.inOut' }, 0)
+                 .fromTo(lineV, { scaleY: 0 }, { scaleY: 1, duration: 2.6, ease: 'power1.inOut' }, 0);
+        steps.forEach((s, i) => processTl.call(() => s.classList.add('is-active'), null, i * 0.8));
+      }
+    }
+
+    function animatePanel(panel){
+      tabsSeen = true;
+      if (!animate) { runPanelExtras(panel); return; }
+      const items = panel.querySelectorAll('[data-reveal], .tl-step');
+      gsap.killTweensOf(items);
+      gsap.fromTo(items, { opacity: 0, y: 36 }, { opacity: 1, y: 0, duration: .9, stagger: .06, ease: 'power3.out', clearProps: 'transform' });
+      const cards = panel.querySelectorAll('.tilt');
+      if (cards.length) gsap.fromTo(cards, { rotateX: 12, transformPerspective: 1100 }, { rotateX: 0, duration: 1.1, stagger: .07, ease: 'power3.out', clearProps: 'transform' });
+      runPanelExtras(panel);
+    }
+
+    function activateTab(id, opts){
+      opts = opts || {};
+      if (!panelIds.includes(id)) return;
+      const changed = id !== currentTab;
+      currentTab = id;
+      tabBtns.forEach((b, i) => {
+        const on = panelIds[i] === id;
+        b.setAttribute('aria-selected', String(on));
+        b.tabIndex = on ? 0 : -1;
+      });
+      panels.forEach(p => { p.hidden = p.id !== id; });
+      navLinks.forEach(a => a.classList.toggle('is-current', a.getAttribute('href') === '#' + id));
+      moveIndicator();
+      if (opts.updateHash !== false) history.replaceState(null, '', '#' + id);
+
+      if (opts.scroll) {
+        const rectTop = tabsRoot.getBoundingClientRect().top;
+        const target = rectTop + window.scrollY - 84;
+        const stuck = rectTop < 90;
+        const offscreen = rectTop > window.innerHeight * 0.5;
+        if (opts.scroll === 'force' || stuck || offscreen) {
+          window.scrollTo({ top: Math.max(target, 0), behavior: reduceMotion ? 'auto' : 'smooth' });
+        }
+      }
+      if (changed || opts.animate) animatePanel(document.getElementById(id));
+      if (hasGSAP && window.ScrollTrigger) ScrollTrigger.refresh();
+    }
+
+    tabBtns.forEach((b, i) => {
+      b.addEventListener('click', () => activateTab(panelIds[i], { scroll: true }));
+      b.addEventListener('keydown', e => {
+        let j = null;
+        if (e.key === 'ArrowRight') j = (i + 1) % tabBtns.length;
+        else if (e.key === 'ArrowLeft') j = (i - 1 + tabBtns.length) % tabBtns.length;
+        else if (e.key === 'Home') j = 0;
+        else if (e.key === 'End') j = tabBtns.length - 1;
+        if (j !== null) { e.preventDefault(); tabBtns[j].focus(); activateTab(panelIds[j]); }
+      });
+    });
+
+    /* any in-page link to a panel (#servicios, #contacto…) opens its tab */
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      const id = a.getAttribute('href').slice(1);
+      if (panelIds.includes(id)) { e.preventDefault(); activateTab(id, { scroll: 'force', animate: true }); }
+    });
+    window.addEventListener('hashchange', () => {
+      const id = location.hash.slice(1);
+      if (panelIds.includes(id)) activateTab(id, { scroll: 'force', updateHash: false, animate: true });
+    });
+    window.addEventListener('resize', moveIndicator);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndicator);
+
+    const initialTab = location.hash.slice(1);
+    if (panelIds.includes(initialTab)) {
+      activateTab(initialTab, { updateHash: false, animate: true });
+      setTimeout(() => activateTab(initialTab, { scroll: 'force', updateHash: false }), 900);
+    } else {
+      activateTab(panelIds[0], { updateHash: false });
+      if (!animate) runPanelExtras(document.getElementById(panelIds[0]));
+    }
+
+    /* first time the tab area enters view, animate the open panel */
+    if (animate) {
+      ScrollTrigger.create({
+        trigger: '#tabs', start: 'top 80%', once: true,
+        onEnter: () => { if (!tabsSeen) animatePanel(document.getElementById(currentTab)); }
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
